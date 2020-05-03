@@ -4,9 +4,10 @@ custom:
   tableName: 'users-table-${self:provider.stage}'
   dynamodb:
     start:
-      port: 8000
+      port: 8200
+      migrate: true
       inMemory: true
-      region: localhost
+    noStart: true
 
 plugins:
   - serverless-offline

@@ -11,14 +11,12 @@ let dynamoDB;
 
 if (IS_OFFLINE === 'true') {
    dynamoDB = new AWS.DynamoDB.DocumentClient({
-     region: 'localhost',
-     endpoint: 'http://localhost:8000'
+        region: 'localhost',
+        endpoint: 'http://localhost:8200'
    });
 } else {
   dynamoDB = new AWS.DynamoDB.DocumentClient();
 }
-
-//app.use(bodyParser.urlencoded({ extended: true}));
 
 var rawBodySaver = function (req, res, buf, encoding) {
     if (buf && buf.length) {
